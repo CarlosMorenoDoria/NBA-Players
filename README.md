@@ -10,7 +10,7 @@ Mira **jugadores-nba** para encontrar los archivos relacionados a la aplicación
 
 ### Pre-requisitos 📋
 
-_Estos son los componentes necesarios para la ejecución de la API:_
+_Estos son los componentes necesarios para la ejecución de la APP:_
 
 ```
 *Nodejs
