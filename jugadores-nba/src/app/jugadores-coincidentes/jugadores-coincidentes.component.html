@@ -1,0 +1,22 @@
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Input inches</mat-label>
+    <input matInput #inches maxlength="3" placeholder="Ex. 175" [(ngModel)]="inch">
+    <mat-hint align="end">{{inches.value.length}} / 3</mat-hint>
+    
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="searchPairs()">Search Pairs</button>
+
+<br>
+<br>
+<div class="list">
+    <mat-selection-list #pair [multiple]="false" class="mat-elevation-z8 Lista">
+        <mat-list-option *ngFor="let pair of pairs" [value]="pair">
+            <font> <strong>Name One:</strong> {{pair[0]}}  &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Height in Inches Player One:</strong> {{pair[1]}} 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <strong>Name Two:</strong> {{pair[2]}}  &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Height in Inches Player Two:</strong> {{pair[3]}}
+            </font>
+        </mat-list-option>
+    </mat-selection-list>
+</div>

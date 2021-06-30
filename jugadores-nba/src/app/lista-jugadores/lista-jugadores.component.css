@@ -1,0 +1,26 @@
+table {
+    margin-left: 10% ;
+    margin-top: 2%;
+    width: 80%;
+}
+th{
+    background-color:cornflowerblue;
+    font-weight: 800;
+}
+tr:hover{
+    background: whitesmoke;
+}
+.list{
+    width: 40%;
+    margin-left: 20%;
+}
+.Lista{
+    margin-left: 10% ;
+    margin-top: 5%;
+}
+span{
+    padding-right: 1rem;
+    padding-left: 10%;
+    font-weight: bold;
+    font-size: 16px;
+}

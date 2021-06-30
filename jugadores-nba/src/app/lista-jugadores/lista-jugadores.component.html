@@ -1,0 +1,53 @@
+<div *ngIf="!detalleJugador">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- First name Column -->
+        <ng-container matColumnDef="first_name">
+        <th mat-header-cell *matHeaderCellDef> First Name </th>
+        <td mat-cell *matCellDef="let element" (click)="selectedPlayer(element)"> {{element.first_name}} </td>
+        </ng-container>
+
+        <!-- Last Name Column -->
+        <ng-container matColumnDef="last_name">
+        <th mat-header-cell *matHeaderCellDef> Last Name </th>
+        <td mat-cell *matCellDef="let element" (click)="selectedPlayer(element)"> {{element.last_name}} </td>
+        </ng-container>
+
+        <!-- Height in Inches Column -->
+        <ng-container matColumnDef="h_in">
+        <th mat-header-cell *matHeaderCellDef > Height in Inches </th>
+        <td mat-cell *matCellDef="let element" (click)="selectedPlayer(element)"> {{element.h_in}} </td>
+        </ng-container>
+
+        <!-- Height in Meters Column -->
+        <ng-container matColumnDef="h_meters">
+        <th mat-header-cell *matHeaderCellDef> Height in Meters </th>
+        <td mat-cell *matCellDef="let element" (click)="selectedPlayer(element)"> {{element.h_meters}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+<div *ngIf="detalleJugador" >
+    <br>
+    <br>
+    <span>Name : {{detalleJugador.first_name}}</span>
+    <span>Height in Inches : {{detalleJugador.h_in}}</span>
+    <span>Height in Meters : {{detalleJugador.h_meters}}</span>    
+    <span>
+        Player selected: {{player.selectedOptions.selected[0]?.value.first_name}}
+    </span>
+    <br>
+    <div class="list">
+        <mat-selection-list #player [multiple]="false" class="mat-elevation-z8 Lista">
+            <mat-list-option *ngFor="let player of sameInchesPlayers" [value]="player">
+                <font> <strong>Name:</strong> {{player.first_name}}  &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Height in Inches :</strong> {{player.h_in}}</font>
+            </mat-list-option>
+        </mat-selection-list>
+    </div>
+</div>
